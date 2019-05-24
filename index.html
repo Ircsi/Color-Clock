@@ -62,12 +62,12 @@ function greetingText () {
   var date= new Date();
   var hours= date.getHours();
   
-  if (hours < 10){ document.getElementById('greetings').innerHTML ='Jó reggelt!';
+  if (hours < 10){ document.getElementById('greetings').innerHTML ='Good morning!';
   }
-  else if (hours >= 10 && hours < 16) {   document.getElementById('greetings').innerHTML ='Szép napot!'; } 
-  else if (hours >= 16 && hours<=21) { document.getElementById('greetings').innerHTML ='Kellemes estét';
+  else if (hours >= 10 && hours < 16) {   document.getElementById('greetings').innerHTML ='Have a nice day!'; } 
+  else if (hours >= 16 && hours<=21) { document.getElementById('greetings').innerHTML ='Good evening!';
 }
-  else {   document.getElementById('greetings').innerHTML ='Jó éjszakát!'
+  else {   document.getElementById('greetings').innerHTML ='Good night!'
   }
 }
 
