@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2019 by Ircsi (http://jsbin.com/dofotel/10/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="Color-clock">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+
+  <title>Color Clock</title>
+<style id="jsbin-css">
+* {
+  margin: 0;
+  padding : 0;
+}
+
+html, body {
+  height : 100%;
+  
+}
+#greetings {
+  text-align : center;
+  position: relative;
+  top: 160px;
+  font-family: "Open Sans Condensed", sans serif;
+  color: #ffff;
+  font-style: italic;
+  font-size: 100px;
+  font-weight: 150;
+}
+
+#clock {
+  text-align : center;
+  position: relative;
+  bottom: -50%;
+  font-family: "Open Sans Condensed", sans serif;
+  color: #ffff;
+  font-style: italic;
+  font-size: 120px;
+  font-weight: 150;
+  margin-top: -80px;
+}
+</style>
+</head>
+<body>
+  <div id="greetings">hello</div>
+<div id="clock">12:13:14</div>
+ <script>
+ document.getElementById("clock").innerHTML= clockFace();
+   </script>
+<script id="jsbin-javascript">
+function greetingText () {
+  var date= new Date();
+  var hours= date.getHours();
+  
+  if (hours < 10){ document.getElementById('greetings').innerHTML ='Jó reggelt!';
+  }
+  else if (hours >= 10 && hours < 16) {   document.getElementById('greetings').innerHTML ='Szép napot!'; } 
+  else if (hours >= 16 && hours<=21) { document.getElementById('greetings').innerHTML ='Kellemes estét';
+}
+  else {   document.getElementById('greetings').innerHTML ='Jó éjszakát!'
+  }
+}
+
+function colorClock (){
+  var date= new Date();
+var hours =date.getHours();
+var minutes= date.getMinutes();
+var seconds = date.getSeconds();
+
+if (hours <=9){
+  hours = '0'+hours;
+}
+if(minutes <=9){
+  minutes = '0'+minutes;
+}
+if(seconds <=9) {
+  seconds ='0'+ seconds;
+} 
+ 
+  hoursC=(hours*10) .toString(16).toUpperCase();    minutesC=(minutes*6).toString(16).toUpperCase();
+   secondsC=(seconds*2).toString(16).toUpperCase();    // a (*érték) szabályozza a színösszetételt
+  
+var clockFace=(hours+' : '+minutes+' : '+seconds);
+  var hexColor='#' +hoursC + minutesC + secondsC;
+document.getElementById('clock').innerHTML= clockFace;
+  
+  setTimeout(function() {
+    colorClock();    
+  }, 1000);
+ 
+  document.body.style.background =hexColor;
+ greetingText();  
+}
+
+colorClock();
+  
+
+  
+</script>
+</body>
+</html>
