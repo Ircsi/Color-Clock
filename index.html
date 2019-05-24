@@ -84,14 +84,14 @@ if(minutes <=9){
   minutes = '0'+minutes;
 }
 if(seconds <=9) {
-  seconds ='0'+ seconds;
+  seconds ='0'+seconds;
 } 
  var secondsC=(seconds).toString(16).toUpperCase();    // a (*érték) szabályozza a színösszetételt
  var minutesC=(minutes*7).toString(16).toUpperCase();
- var hoursC=(hours*10) .toString(16).toUpperCase();  
+ var hoursC=(hours*10).toString(16).toUpperCase();  
   
 var clockFace=(hours+' : '+minutes+' : '+seconds);
-  var hexColor='#' +hoursC + minutesC + secondsC;
+  var hexColor='#'+hoursC+minutesC+secondsC;
 document.getElementById('clock').innerHTML= clockFace;
   
   setTimeout(function() {
