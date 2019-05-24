@@ -86,10 +86,9 @@ if(minutes <=9){
 if(seconds <=9) {
   seconds ='0'+ seconds;
 } 
- 
-  hoursC=(hours*10) .toString(16).toUpperCase();  
-   minutesC=(minutes*6).toString(16).toUpperCase();
-   secondsC=(seconds*2).toString(16).toUpperCase();    // a (*érték) szabályozza a színváltás gyakoriságát
+ var secondsC=(seconds).toString(16).toUpperCase();    // a (*érték) szabályozza a színösszetételt
+ var minutesC=(minutes*7).toString(16).toUpperCase();
+ var hoursC=(hours*10) .toString(16).toUpperCase();  
   
 var clockFace=(hours+' : '+minutes+' : '+seconds);
   var hexColor='#' +hoursC + minutesC + secondsC;
